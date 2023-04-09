@@ -1,7 +1,7 @@
 # Accounting Daily Tasks API
 
 The Accounting Daily Tasks API is a Go application that connects to a MySQL database and provides endpoints to manage daily accounting tasks. This API allows CRUD (Create, Read, Update, Delete) operations on a MySQL database to keep track of the tasks, according to the user (manager or technician).
-Within the code, techincians are represented with `tech` and managers with `mgr`
+Within the code, techincians are represented with `tech` and managers with `mgr`, with its corresponding number of identificaiton
 
 ## Implementation
 
@@ -57,7 +57,7 @@ Response:
 
 
 
-### 3. Get All tasks: 
+### 3. Get all tasks: 
 #### /task (GET)
 This feature only works for managers and it recovers all tasks registered in the database. It returns a list of tasks to any manager register in the authorization list
 _Try it with other users or differente Ids to check error validation_

@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+
+  api:
+    build: .
+    restart: always
+    container_name: accounting-daily-tasks
+    ports:
+      - 8081:8081
+    depends_on:
+      - mysql-db
+    entrypoint: /app/accounting-daily-tasks
+      
+  mysql-db:
+    image: mysql:latest
+    restart: always
+    container_name: db_mysql
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=db_dailytasks
+    ports:
+      - 3306:3306
+    volumes:
+       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+       - ./db-data:/var/lib/mysql
+
+    
+    
+
