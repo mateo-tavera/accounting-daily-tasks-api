@@ -1,6 +1,6 @@
 module github.com/mateo-tavera/accounting-daily-tasks
 
-go 1.18
+go 1.21.1
 
 require github.com/gorilla/mux v1.8.0
 
